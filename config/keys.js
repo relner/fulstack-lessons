@@ -1,3 +1,4 @@
 module.exports = {
-    mongoURI: 'mongodb://localhost/fullstack'
+    mongoURI: 'mongodb://localhost/fullstack',
+    jwt: 'dev-jwt'
 }

@@ -11,9 +11,9 @@ const positionRoutes = require('./routes/position')
 const keys = require('./config/keys')
 const app = express()
 
-mongoose.connect(keys.mongoURI)
-        .then(() => console.log('MongoDB Connected'))
-        .then(error => console.log(error))
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true,  useCreateIndex: true })
+                                                .then(() => console.log('MongoDB Connected'))
+                                                .catch(error => console.log(error))
 
 app.use(require('morgan')('dev'))
 app.use(bodyParser.urlencoded({extended: true}))
