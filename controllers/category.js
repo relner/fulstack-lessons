@@ -22,14 +22,6 @@ module.exports.getById = async function(req, res){
 
 module.exports.remove = async function(req, res){
     try {
-        
-    } catch (error) {
-        errorHandler(res, error)
-    }
-}
-
-module.exports.create = async function(req, res){
-    try {
         await Category.remove({_id: req.params.id})
         await Position.remove({category: req.params.id})
         req.status(200).json({
@@ -40,6 +32,37 @@ module.exports.create = async function(req, res){
     }
 }
 
+module.exports.create = async function(req, res){
+    const category = new Category({
+        name: req.body.name,
+        user: req.user.id,
+        imageSrc: req.file ? req.file.path : ''
+    })
+    try {
+        await category.save()
+        res.status(201).json(category)
+    } catch (error) {
+        errorHandler(res, error)
+    }
+}
+
 module.exports.update = async function(req, res){
+    const updated = {
+        name: req.body.name
+    }
+
+    if(req.file){
+        updated.imageSrc = req.file.path
+    }
     
+    try {
+        const category = await Category.findOneAndUpdate(
+            {id: req.params.id},
+            {$set: updated},
+            {new: true}
+        )
+        res.status(200).json(category)
+    } catch (error) {
+        errorHandler(res, error)
+    }
 } 
