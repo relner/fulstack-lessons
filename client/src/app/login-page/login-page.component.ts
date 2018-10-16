@@ -25,7 +25,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
     })
 
     this.route.queryParams.subscribe((params: Params) => {
-      if(params['registered']){
+      if(params['registred']){
         //You can enter in the system with your details
       } else if (params['accessDenied']){
         //Please enter you autorisation details
