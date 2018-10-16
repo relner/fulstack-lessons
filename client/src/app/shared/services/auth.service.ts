@@ -22,7 +22,7 @@ export class AuthService {
             .pipe(
                 tap(
                     ({token}) => {
-                        localStorage.setItem('auth-token', this.token)
+                        localStorage.setItem('auth-token', token)
                         this.setToken(token)
                     }
                 )
