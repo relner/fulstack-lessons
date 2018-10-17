@@ -30,6 +30,8 @@ export class LoginPageComponent implements OnInit, OnDestroy {
         MaterialService.toast('You can enter in the system with your details')
       } else if (params['accessDenied']){
         MaterialService.toast('Please enter you autorisation details')
+      } else if (params['sessionFaild']){
+        MaterialService.toast('Session Faild please Renter you autorisation details')
       }
     })
   }
