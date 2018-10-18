@@ -4,7 +4,7 @@ const errorHandler = require('../utilus/errorHandler')
 
 module.exports.getAll = async function(req, res){
     try {
-        const categories = await Category.find({user: req.us.id})
+        const categories = await Category.find({user: req.user.id})
         res.status(200).json(categories)
     } catch (error) {
         errorHandler(res, error)
