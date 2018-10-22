@@ -18,7 +18,7 @@ module.exports.create = async function(req, res){
         const position = await new Position({
             name: req.body.name,
             cost: req.body.cost,
-            ategory: req.body.category,
+            category: req.body.category,
             user: req.user.id
         }).save()
         res.status(201).json(position)
