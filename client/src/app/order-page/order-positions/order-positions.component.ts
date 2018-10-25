@@ -4,7 +4,7 @@ import { PositionsService } from 'src/app/shared/services/positions.service';
 import { Observable } from 'rxjs';
 import { Position } from 'src/app/shared/interfaces';
 import { switchMap, map } from 'rxjs/operators';
-import { OrderService } from '../order.servoce';
+import { OrderService } from '../order.service';
 import { MaterialService } from 'src/app/shared/classes/material.service';
 
 @Component({
