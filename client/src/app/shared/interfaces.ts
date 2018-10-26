@@ -20,7 +20,7 @@ export interface Position {
     category: string
     user?: string
     _id?: string
-    quantity: number
+    quantity?: number
 }
 
 export interface Order {
