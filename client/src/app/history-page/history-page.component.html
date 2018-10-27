@@ -5,13 +5,15 @@
     data-tooltip="Открыть фильтр"
     data-position="left"
     (click)="isFilterVisible = !isFilterVisible"
-    [ngClass]="{'active': isFilterVisible}"
+    [ngClass]="{'active': isFilterVisible, 'red': isFiltered()}"
     #tooltip>
       <i class="material-icons">filter_list</i>
   </button>
 </div>
 
-<app-history-filter *ngIf="isFilterVisible"></app-history-filter>
+<app-history-filter 
+  *ngIf="isFilterVisible"
+  (onFilter)="applyFilter($event)"></app-history-filter>
 
 
 <div *ngIf="!reloading; else reloadingBlock">

@@ -19,7 +19,7 @@ module.exports.getAll = async function(req, res){
     if(req.query.end){
         if(!query.date) query.date = {}
         //$gte menshe ili ravno
-        query.date[$lte] = req.query.end
+        query.date['$lte'] = req.query.end
     }
 
     if(req.query.order){
