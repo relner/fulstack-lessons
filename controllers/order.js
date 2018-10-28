@@ -1,5 +1,5 @@
 const Order = require('../models/Order')
-const errorHandler = require('../utilus/errorHandler')
+const errorHandler = require('../utils/errorHandler')
 
 // (get) localhost:5000/api/order?offset=30&limit=50
 module.exports.getAll = async function(req, res){
