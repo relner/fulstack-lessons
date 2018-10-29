@@ -35,8 +35,6 @@ export class AnalyticsPageComponent implements AfterViewInit, OnDestroy {
 
     this.aSub = this.service.getAnalytics().subscribe((data: AnalyticsPage) => {
 
-      console.log(data)
-
       this.average = data.average
 
       gainConfig.labels = data.chart.map(item => item.label)
